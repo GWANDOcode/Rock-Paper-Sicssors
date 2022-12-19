@@ -32,14 +32,14 @@ function playRound (playerSelection, computerSelection) {
     playerSelection = caseInsensitive(playerSelection);
 
     if (checkDraw(playerSelection, computerSelection)) {
-        console.log (`It's a Draw! ${playerSelection} and ${computerSelection}`);
+        return `It's a Draw! ${playerSelection} and ${computerSelection}`;
     } else if (checkWin(playerSelection, computerSelection)) {
-        console.log (`You Win! ${playerSelection} beats ${computerSelection}`);
+        return `You Win! ${playerSelection} beats ${computerSelection}`;
     } else {
-        console.log (`You Lose! ${computerSelection} beats ${playerSelection}`);
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 };
 
-playRound('Paper');
+console.log(playRound('Paper'));
 
 
