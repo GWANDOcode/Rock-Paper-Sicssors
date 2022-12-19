@@ -1,4 +1,7 @@
 const CHOICES = ['Rock', 'Paper', 'Sicssors'];
+let result;
+let scorePlayer = 0;
+let scoreComputer = 0;
 
 function getComputerChoice () {
     return CHOICES[Math.floor((Math.random() * CHOICES.length))];
@@ -27,19 +30,36 @@ function checkDraw (playerSelection, computerSelection) {
     }
 };
 
-function playRound (playerSelection, computerSelection) {
-    computerSelection = getComputerChoice();
+function playRound (playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = caseInsensitive(playerSelection);
 
     if (checkDraw(playerSelection, computerSelection)) {
-        return `It's a Draw! ${playerSelection} and ${computerSelection}`;
+        result = `It's a Draw! ${playerSelection} and ${computerSelection}`;
     } else if (checkWin(playerSelection, computerSelection)) {
-        return `You Win! ${playerSelection} beats ${computerSelection}`;
+        result = `You Win! ${playerSelection} beats ${computerSelection}`;
+        scorePlayer++;
     } else {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        result =`You Lose! ${computerSelection} beats ${playerSelection}`;
+        scoreComputer++;
     }
 };
 
-console.log(playRound('Paper'));
+function resetScore () {
+    scorePlayer = 0;
+    scoreComputer = 0;
+}
+
+function game() {
+    for (let round = 0; round < 5; round++) {
+        playerSelection = prompt('Whats your choice?');
+        console.log(`Round: ${round + 1}`);
+        playRound (playerSelection);
+        console.log(result);
+        console.log(`Your Score: ${scorePlayer} Computer Score: ${scoreComputer}`);
+    }
+    resetScore ();
+}
+
+game();
 
 
