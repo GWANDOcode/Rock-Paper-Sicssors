@@ -66,6 +66,6 @@ function game() {
     resetScore ();
 };
 
-game();
+//game();
 
 
