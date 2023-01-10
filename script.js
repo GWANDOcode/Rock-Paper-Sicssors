@@ -3,14 +3,17 @@ let result;
 let scorePlayer = 0;
 let scoreComputer = 0;
 
+//Randomized computer choices
 function getComputerChoice () {
     return CHOICES[Math.floor((Math.random() * CHOICES.length))];
 };
 
+//makes input case Insensetive 
 function caseInsensitive (playerSelection) {
     return playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 }
 
+//checks if round is a win/loss
 function checkWin (playerSelection, computerSelection) {
     if (!checkDraw(playerSelection,computerSelection) 
     && ((playerSelection == 'Rock' && computerSelection == 'Sicssors')
@@ -22,6 +25,7 @@ function checkWin (playerSelection, computerSelection) {
     }
 };
 
+//checks if round is draw
 function checkDraw (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return true;
@@ -30,6 +34,7 @@ function checkDraw (playerSelection, computerSelection) {
     }
 };
 
+//function to play 1 round
 function playRound (playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = caseInsensitive(playerSelection);
 
@@ -44,21 +49,22 @@ function playRound (playerSelection, computerSelection = getComputerChoice()) {
     }
 };
 
+//resets score
 function resetScore () {
     scorePlayer = 0;
     scoreComputer = 0;
-}
+};
 
+//g
 function game() {
-    for (let round = 0; round < 5; round++) {
-        playerSelection = prompt('Whats your choice?');
-        console.log(`Round: ${round + 1}`);
-        playRound (playerSelection);
-        console.log(result);
-        console.log(`Your Score: ${scorePlayer} Computer Score: ${scoreComputer}`);
-    }
+    playerSelection = prompt('Whats your choice?');
+    console.log(`Round: ${round + 1}`);
+    playRound (playerSelection);
+    console.log(result);
+    console.log(`Your Score: ${scorePlayer} Computer Score: ${scoreComputer}`);
+
     resetScore ();
-}
+};
 
 game();
 
