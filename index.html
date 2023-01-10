@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="buttons">
-        <div class="button" id="rock">ROCK</div>
-        <div class="button" id="paper">PAPER</div>
-        <div class="button" id="scissors">SCISSORS</div>
+    <div id="gameDiv">
+        <h1>ROCK, PAPER, SCISSORS</h1>
+        <div class="center">
+            <div class="buttons">
+                <div class="button" id="rockBtn">ROCK</div>
+                <div class="button" id="paperBtn">PAPER</div>
+                <div class="button" id="scissorsBtn">SCISSORS</div>
+            </div>
+        </div>  
+        <div class="center gap">
+            <div id="scorePlayerDisplay"></div>
+            <div id="resetBtn" class="center">RESET SCORE</div>
+            <div id="scoreComputerDisplay"></div>
+        </div>
+        <div class="center">
+            <div class="computerSelectionDisplay"></div>
+        </div>
     </div>
-
+    <div id="resultDiv" class="hide">
+        <h2></h2>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>
