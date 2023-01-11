@@ -1,9 +1,17 @@
 html {
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #D5CEA3;
 }
 
 h1 {
-    margin: auto;
+   text-align: center;
+   color: #1A120B;
+   margin-bottom: -3rem;
 }
 
 .center{
@@ -24,8 +32,8 @@ h1 {
 .button {
     width: 7rem;
     height: 7rem;
-    background-color: black;
-    color: white;
+    background-color: #3C2A21;
+    color: #E5E5CB;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -35,18 +43,21 @@ h1 {
 #resetBtn,
 #scorePlayerDisplay, 
 #scoreComputerDisplay {
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 3rem;
+    color: #1A120B;
 }
 
 #resetBtn {
-    background-color: bisque;
+    background-color: #1A120B;
     border-radius: 100px;
+    padding: 10px;
+    color: #E5E5CB;
 }
 
 .gap {
