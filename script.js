@@ -114,9 +114,7 @@ function checkScore() {
 };
 
 h2.addEventListener("click", () => {
-    gameDiv.classList.toggle("hide");
-    resultDiv.style.display = "none";
-    resetScore;
+    location.reload();
 });
 
 h2.addEventListener("mouseover", () => {
